@@ -1,0 +1,26 @@
+<?php
+namespace FacturaScripts\Plugins\WoodPublish\Controller;
+
+use FacturaScripts\Core\Lib\ListController;
+
+class ListTablonPrecio extends ListController
+{
+    public function getPageData(): array
+    {
+        $data = parent::getPageData();
+        $data['title'] = 'tablon-precios';
+        $data['menu'] = 'admin';
+        $data['icon'] = 'fa-solid fa-money-bill';
+        return $data;
+    }
+
+    protected function createViews(): void
+    {
+        $viewName = 'ListTablonPrecio';
+        $this->addView($viewName, 'TablonPrecio', 'tablon-precios', 'fa-solid fa-money-bill')
+            ->addSearchFields(['tipo_madera', 'tipo_tablon'])
+            ->addOrderBy(['tipo_madera', 'tipo_tablon', 'espesor'], 'tipo-madera')
+            ->addOrderBy(['precio_m2'], 'precio-m2')
+            ->addOrderBy(['espesor'], 'espesor');
+    }
+}

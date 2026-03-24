@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group>
+            <column name="id" display="none">
+                <widget type="text" fieldname="id" readonly="true" />
+            </column>
+            <column name="tipo_madera">
+                <widget type="text" fieldname="tipo_madera" />
+            </column>
+            <column name="tipo_tablon">
+                <widget type="text" fieldname="tipo_tablon" />
+            </column>
+            <column name="espesor">
+                <widget type="number" fieldname="espesor" />
+            </column>
+            <column name="precio_m2">
+                <widget type="number" fieldname="precio_m2" />
+            </column>
+        </group>
+    </columns>
+</view>
